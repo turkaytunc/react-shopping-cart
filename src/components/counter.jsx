@@ -8,6 +8,9 @@ class Counter extends Component {
   handleIncrement = () => {
     this.setState({ value: this.state.value + 1 });
   };
+  handleDecrement = () => {
+    if (this.state.value > 0) this.setState({ value: this.state.value - 1 });
+  };
 
   render() {
     return (
@@ -20,7 +23,13 @@ class Counter extends Component {
           onClick={this.handleIncrement}
           className="btn btn-secondary btn-sm m-2"
         >
-          Increment
+          +
+        </button>
+        <button
+          onClick={this.handleDecrement}
+          className="btn btn-secondary btn-sm m-2"
+        >
+          -
         </button>
       </div>
     );
