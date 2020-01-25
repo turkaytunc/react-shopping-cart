@@ -2,28 +2,29 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
-    imageUrl: "https://picsum.photos/200"
+    value: this.props.value
   };
 
-  styles = {
-    fontSize: 30,
-    fontWeight: "bold"
+  handleIncrement = () => {
+    this.setState({ value: this.state.value + 1 });
   };
+
   render() {
     return (
       <div>
-        <img src={this.state.imageUrl} alt="200x200 image" />
         <span className="badge badge-primary m-2">{this.formatCount()}</span>
-        <button style={[this.styles][0]} className="btn btn-secondary btn-sm">
+        <button
+          onClick={this.handleIncrement}
+          className="btn btn-secondary btn-sm"
+        >
           Increment
         </button>
       </div>
     );
   }
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
   }
 }
 
