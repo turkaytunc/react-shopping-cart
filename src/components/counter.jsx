@@ -15,7 +15,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <span className="badge badge-primary ml-2 mr-2">
+        <span className="badge badge-primary ml-2 mr-2 p-2">
           {this.formatCount()}
         </span>
         <span className="badge badge-secondary ml-2">Adet</span>
